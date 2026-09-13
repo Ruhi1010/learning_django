@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <h1>Contact Us</h1>
+        <p>If you have any questions or inquiries, please fill out the form below and we will get back to you as soon as possible.</p>
+
+<form
+  action="https://formspree.io/f/{FORM_ID}"
+  class="fs-form"
+  target="_top"
+  method="POST"
+>
+  <div class="fs-field">
+    <label class="fs-label" for="name">Your Name</label>
+    <input class="fs-input" id="name" name="name" required />
+  </div>
+  <div class="fs-field">
+    <label class="fs-label" for="email">Email</label>
+    <input class="fs-input" id="email" name="email" required />
+    <p class="fs-description">
+      This will help me respond to your query via an email.
+    </p>
+  </div>
+  <div class="fs-field">
+    <label class="fs-label" for="message">Message</label>
+    <textarea
+      class="fs-textarea"
+      id="message"
+      name="message"
+      required
+    ></textarea>
+    <p class="fs-description">What would you like to discuss?</p>
+  </div>
+  <div class="fs-button-group">
+    <button class="fs-button" type="submit">Submit</button>
+  </div>
+</form>
+
+
+
+    </body>
+</html>
