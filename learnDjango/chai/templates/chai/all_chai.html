@@ -7,5 +7,37 @@ Home Page
 
 
 {% block content %}
-<h1>Ruhi Practice Hub | All Chai Page</h1>
+<div class="flex justify-center">
+    <h1>Ruhi Practice Hub | All Chai Page</h1>
+</div>
+
+
+
+
+
+<div class="grid grid-cols-5 gap-4 m-4">
+
+
+{% for chai in chais %}
+    <div class="bg-blue-600 p-5 rounded">
+        <img class="rounded shadow-lg" src="{{chai.image.url}}" alt="">
+        <h2 class="text-2xl font-bold">{{chai.name}}</h2>
+        <h3 class="text-lg">{{chai.description}}</h3>
+        <p class="text-md">{{chai.numbers}} cups</p>
+        <h3 class="text-sm">{{chai.type}} - {{chai.id}}</h3>
+        <p class="text-lg font-bold">${{chai.price}}/per cup</p>
+        <a href="{% url 'chai_detail' chai.id %}">
+            <button type="button" class = "inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                {{chai.type}} - {{chai.id}}
+            </button>
+        </a>
+    </div>
+{% endfor %}
+
+</div>
+
 {% endblock content %}
+
+
+
+

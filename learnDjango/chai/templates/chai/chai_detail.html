@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Chai Detail Page
+{% endblock title %}
+
+
+{% block content %}
+<div class="flex justify-center">
+    <h1>Chai Detail</h1>
+</div>
+
+<h3>{{ chai.name }}</h3>
+<p>{{ chai.description }}</p>
+<h3>{{ chai.type }} - {{ chai.id }}</h3>
+<h3>{{ chai.numbers }} cups</h3>
+<h3>${{ chai.price }}/per cup</h3>
+
+
+{% endblock content %}
+
+
+
+

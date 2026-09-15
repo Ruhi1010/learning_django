@@ -13,16 +13,24 @@
         {% endblock title %}
     </title>
 
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+   
     {% tailwind_css %}
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% comment %} <style>
+        body{
+            background-color: #0b1f3a !important;
+            color: white !important;
+            min-height: 100vh;
+        }
+    </style> {% endcomment %}
 </head>
 
-<body class="bg-blue-500 text-white">
+<body>
 
     <nav>This is our navbar</nav>
 
     {% block content %}
-    {% endblock content %}
+    {% endblock  %}
 
 </body>
 </html>
