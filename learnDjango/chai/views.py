@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import ChaiVarity
+from .models import ChaiVarity, Store
 from django.shortcuts import get_object_or_404
 
 
@@ -13,3 +13,7 @@ def chai_detail(request, chai_id):
     chai = get_object_or_404(ChaiVarity, pk=chai_id)
     return render(request, 'chai/chai_detail.html', {'chai': chai})
 
+def store_detail(request, store_id):
+    store = get_object_or_404(Store, id=store_id)
+
+    return render(request, 'chai/store_detail.html', {'store': store})
