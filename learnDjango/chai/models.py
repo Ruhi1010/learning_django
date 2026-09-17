@@ -64,3 +64,18 @@ class ChaiCertificate(models.Model):
     
     def __str__(self):
         return f'Certificate for {self.name.chai}'
+    
+
+class StoreReview(models.Model):
+    store = models.ForeignKey(Store, on_delete=models.CASCADE)
+    review_text = models.TextField()
+    rating = models.IntegerField()
+
+    date_added = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"{self.store.name} - {self.rating}/5"
+
+
+
+
